@@ -6,7 +6,7 @@ import Container from '@mui/material/Container'
 
 function App() {
   return (
-    <Container maxWidth='xs'>
+    <Container maxWidth='xxl'>
       <div className="App">
         <Header />
       </div>
