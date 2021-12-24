@@ -38,51 +38,50 @@ const HomePage = () => {
             borderRadius: '6px',
             justifyContent: 'center'}}>
           <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card>
+            <Card sx={{backgroundColor: '#E06C9F'}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
                 height='auto'
                 alt='pink nails in pink liquid'/>
               <CardContent>
-                <Button variant='outlined'><Typography variant='h6'>Make An Appointment</Typography></Button>
+                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>Make An Appointment</Typography></Button>
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card>
+            <Card sx={{backgroundColor: '#E06C9F'}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
                 height='auto'
                 alt='pink nails in pink liquid'/>
               <CardContent>
-                <Button variant='outlined'><Typography variant='h6'>Make An Appointment</Typography></Button>
+                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>View Gallery</Typography></Button>
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card>
+            <Card sx={{backgroundColor: '#E06C9F'}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
                 height='auto'
                 alt='pink nails in pink liquid'/>
               <CardContent>
-                <Button variant='outlined'><Typography variant='h6'>Make An Appointment</Typography></Button>
+                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>Write a review</Typography></Button>
               </CardContent>
             </Card>
           </Grid>
           <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card>
+            <Card sx={{backgroundColor: '#E06C9F'}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
                 height='auto'
                 alt='pink nails in pink liquid'/>
               <CardContent>
-
-                <Button variant='outlined'><Typography variant='h6'>Make An Appointment</Typography></Button>
+                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>View Pricing</Typography></Button>
               </CardContent>
             </Card>
           </Grid>

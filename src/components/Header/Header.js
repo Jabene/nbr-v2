@@ -11,11 +11,16 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import LoginIcon from '@mui/icons-material/Login'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import { useNavigate } from 'react-router-dom'
 
 const pages = ['Home', 'Gallery', 'Pricing'];
 const settings = ['Account', 'Appointments', 'Logout'];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({ user }) => {
+  const navigate = useNavigate()
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -26,8 +31,13 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(event.currentTarget);
   }
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
+  const handleCloseNavMenu = (page) => {
+    setAnchorElNav(page.target)
+    if (page.target.innerText === 'HOME') {
+      navigate('/')
+    } else {
+      navigate(`/${page.target.innerText}`)
+    }
   }
 
   const handleCloseUserMenu = () => {
@@ -35,9 +45,9 @@ const ResponsiveAppBar = () => {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor: '#E06C9F'}}>
       <Container maxWidth="xl">
-        <Toolbar>
+        <Toolbar >
           <Typography
             variant="h4"
             noWrap
@@ -77,7 +87,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -103,35 +113,41 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+          {user.id ? <Box sx={{ flexGrow: 0 }}>
+                    <Tooltip title="Open settings">
+                      <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                        <Avatar alt={user.first_name} src="/static/images/avatar/3.jpg" />
+                      </IconButton>
+                    </Tooltip>
+                    <Menu
+                      sx={{ mt: '45px' }}
+                      id="menu-appbar"
+                      anchorEl={anchorElUser}
+                      anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                      }}
+                      keepMounted
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                      }}
+                      open={Boolean(anchorElUser)}
+                      onClose={handleCloseUserMenu}
+                    >
+                      {settings.map((setting) => (
+                        <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                          <Typography textAlign="center">{setting}</Typography>
+                        </MenuItem>
+                      ))}
+                    </Menu>
+                  </Box> :
+                  <Box sx={{ flexGrow: 0 }}>
+                    <Button startIcon={<LoginIcon />} href='/log-in' variant='outlined' sx={{color: 'white', borderColor: '#F9C8DF'}}>Log In</Button>
+                  </Box>}
+          <IconButton>
+            <InstagramIcon />
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
