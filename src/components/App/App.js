@@ -21,7 +21,7 @@ function App() {
   }
 
   return (
-      <Container maxWidth='lg' sx={{p: '0px !important', backgroundColor: '#F2A4C7', minHeight: {xs: '100vh'}}}>
+      <Container maxWidth='xxl' sx={{p: '0px !important', backgroundColor: '#F2A4C7', minHeight: {xs: '100vh'}}}>
         <div className="App">
           <Header user={user} toggleDrawerLeft={toggleDrawerLeft} toggleDrawerRight={toggleDrawerRight}/>
           <Routes>

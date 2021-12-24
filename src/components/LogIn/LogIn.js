@@ -29,7 +29,6 @@ const LogIn = ({ updateUser }) => {
   }
 
   const saveUserInfo = user => {
-    console.log(user)
     updateUser(user)
     localStorage.setItem('user', JSON.stringify(user))
   }
@@ -49,14 +48,9 @@ const LogIn = ({ updateUser }) => {
     newUser[0] ? saveUserInfo(newUser[0]) : handleError(true, 'That email already exists')
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log('hi')
-  }
-
   return (
     <Paper sx={{mt: '20px', }}>
-      <form className='log-in-form' onSubmit={handleSubmit}>
+      <form className='log-in-form'>
         <Typography variant='h3' my={2}>Log In</Typography>
         {register &&
           <>
