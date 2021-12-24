@@ -12,62 +12,54 @@ import './HomePage.css'
 
 const HomePage = () => {
   return (
-    <Grid container
-      className='home-page'
-
-      columns={{xs: 4, md: 12}}>
-      
-      <Grid item
-        xs={4}
-        md={8}
-        my={4}>
         <Grid container
           sx={{
-            minHeight: {l: '600px', md: '600px', xs: '400px'},
             borderRadius: '6px',
-            justifyContent: 'center'}}>
-          <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card sx={{backgroundColor: '#E06C9F'}}>
+            overflow: 'scroll',
+            justifyContent: 'center'}}
+          columns={{xs: 5, md: 12}}>
+          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: {xs: '400px'}, maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
+            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
-                height='auto'
+                height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>
                 <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>Make An Appointment</Typography></Button>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card sx={{backgroundColor: '#E06C9F'}}>
+          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: {xs: '400px'}, maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
+            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
-                height='auto'
+                height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>
                 <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>View Gallery</Typography></Button>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card sx={{backgroundColor: '#E06C9F'}}>
+          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: '400px', maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
+            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
-                height='auto'
+                height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>
                 <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>Write a review</Typography></Button>
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={3} md={5} m={2} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, maxWidth: '100%', minHeight: {xs: '400px'}}}>
-            <Card sx={{backgroundColor: '#E06C9F'}}>
+          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: '400px', maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
+            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
                 image= 'https://wallpapercave.com/wp/wp4208201.jpg'
-                height='auto'
+                height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>
                 <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>View Pricing</Typography></Button>
@@ -75,8 +67,6 @@ const HomePage = () => {
             </Card>
           </Grid>
         </Grid>
-      </Grid>
-    </Grid>
   )
 }
 
