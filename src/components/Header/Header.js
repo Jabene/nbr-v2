@@ -12,13 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LoginIcon from '@mui/icons-material/Login'
-import InstagramIcon from '@mui/icons-material/Instagram'
 import { useNavigate } from 'react-router-dom'
 
 const pages = ['Home', 'Gallery', 'Pricing'];
 const settings = ['Account', 'Appointments', 'Logout'];
 
-const ResponsiveAppBar = ({ user }) => {
+const ResponsiveAppBar = ({ user, toggleModal }) => {
   const navigate = useNavigate()
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -63,35 +62,11 @@ const ResponsiveAppBar = ({ user }) => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={() => toggleModal(true)}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
           <Typography
             variant="h6"
@@ -145,9 +120,6 @@ const ResponsiveAppBar = ({ user }) => {
                   <Box sx={{ flexGrow: 0 }}>
                     <Button startIcon={<LoginIcon />} href='/log-in' variant='outlined' sx={{color: 'white', borderColor: '#F9C8DF'}}>Log In</Button>
                   </Box>}
-          <IconButton>
-            <InstagramIcon />
-          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>

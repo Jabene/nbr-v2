@@ -16,18 +16,7 @@ const HomePage = () => {
       className='home-page'
 
       columns={{xs: 4, md: 12}}>
-      <Grid item
-        md={3}
-        my={4}
-        sx={{
-          display: {xs: 'none', md: 'flex'}}}>
-        <Paper
-          className='home-img'
-          sx={{
-            minHeight: {md: '600px'},
-            minWidth: '400px'}}
-          elevation={10}></Paper>
-      </Grid>
+      
       <Grid item
         xs={4}
         md={8}
