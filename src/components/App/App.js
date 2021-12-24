@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css';
 import Header from '../Header/Header'
 import HomePage from '../HomePage/HomePage'
@@ -11,9 +11,14 @@ import Container from '@mui/material/Container'
 
 
 function App() {
-  const [user, setUser] = React.useState({})
+  const [user, setUser] = React.useState('')
   const [drawerLeft, toggleDrawerLeft] = React.useState(false)
   const [drawerRight, toggleDrawerRight] = React.useState(false)
+  const existingUser = JSON.parse(localStorage.getItem('user'))
+
+  if(!user && existingUser) {
+    setUser(existingUser)
+  }
 
   return (
       <Container maxWidth='lg' sx={{p: '0px !important', backgroundColor: '#F2A4C7', minHeight: {xs: '100vh'}}}>
@@ -22,12 +27,12 @@ function App() {
           <Routes>
             <Route
               path='/'
-              element={<HomePage />}
-            />
+              element={<HomePage />}/>
             <Route
               path='/log-in'
-              element={<LogIn updateUser={setUser}/>}
-            />
+              element={ user ?
+                <Navigate to='/' /> :
+                <LogIn updateUser={setUser}/>}/>
           </Routes>
         </div>
         <DrawerLeft drawerLeft={drawerLeft} toggleDrawerLeft={toggleDrawerLeft} />

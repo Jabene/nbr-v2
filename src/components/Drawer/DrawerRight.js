@@ -12,6 +12,12 @@ import ScheduleIcon from '@mui/icons-material/Schedule'
 import LogoutIcon from '@mui/icons-material/Logout'
 
 const DrawerRight = ({drawerRight, toggleDrawerRight}) => {
+
+  const logOut = () => {
+    localStorage.clear()
+    window.location.reload()
+  }
+
   return (
     <Drawer anchor='right' open={drawerRight} onClose={() => toggleDrawerRight(false)} sx={{display: 'flex', flexDirection: 'column'}}>
       <List>
@@ -34,14 +40,13 @@ const DrawerRight = ({drawerRight, toggleDrawerRight}) => {
         </ListItem>
 
         <ListItem disablePadding sx={{width: '300px'}}>
-          <ListItemButton>
+          <ListItemButton onClick={logOut}>
             <ListItemIcon>
               <LogoutIcon />
             </ListItemIcon>
             <ListItemText primary='Log out' />
           </ListItemButton>
         </ListItem>
-
       </List>
     </Drawer>
   )
