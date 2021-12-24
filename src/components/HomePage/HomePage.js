@@ -34,7 +34,7 @@ const HomePage = () => {
             <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
-                image= 'https://wallpapercave.com/wp/wp4208201.jpg'
+                image= 'https://www.newnailtime.com/img/aboutimg1.jpg'
                 height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>
@@ -46,7 +46,7 @@ const HomePage = () => {
             <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
-                image= 'https://wallpapercave.com/wp/wp4208201.jpg'
+                image= 'https://ak.picdn.net/shutterstock/videos/6669608/thumb/1.jpg'
                 height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>
@@ -58,7 +58,7 @@ const HomePage = () => {
             <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
               <CardMedia
                 component= 'img'
-                image= 'https://wallpapercave.com/wp/wp4208201.jpg'
+                image= 'https://media.istockphoto.com/photos/hands-with-pastel-nail-polish-on-multicolored-background-picture-id1308463577?b=1&k=20&m=1308463577&s=170667a&w=0&h=8lCVx4f1MjAnKeDzSrOUj3jksUU0iWfU8QjNbXAnGIw='
                 height='60%'
                 alt='pink nails in pink liquid'/>
               <CardContent>

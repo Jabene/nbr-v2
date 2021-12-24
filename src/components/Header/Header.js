@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom'
 const pages = ['Home', 'Gallery', 'Pricing'];
 const settings = ['Account', 'Appointments', 'Logout'];
 
-const ResponsiveAppBar = ({ user, toggleModal }) => {
+const ResponsiveAppBar = ({ user, toggleDrawerLeft, toggleDrawerRight }) => {
   const navigate = useNavigate()
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,8 +26,8 @@ const ResponsiveAppBar = ({ user, toggleModal }) => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
+  const handleOpenUserMenu = () => {
+    toggleDrawerRight(true)
   }
 
   const handleCloseNavMenu = (page) => {
@@ -62,7 +62,7 @@ const ResponsiveAppBar = ({ user, toggleModal }) => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={() => toggleModal(true)}
+              onClick={() => toggleDrawerLeft(true)}
               color="inherit"
             >
               <MenuIcon />
@@ -90,7 +90,7 @@ const ResponsiveAppBar = ({ user, toggleModal }) => {
 
           {user.id ? <Box sx={{ flexGrow: 0 }}>
                     <Tooltip title="Open settings">
-                      <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <IconButton onClick={() => toggleDrawerRight(true)} sx={{ p: 0 }}>
                         <Avatar alt={user.first_name} src="/static/images/avatar/3.jpg" />
                       </IconButton>
                     </Tooltip>
@@ -118,7 +118,7 @@ const ResponsiveAppBar = ({ user, toggleModal }) => {
                     </Menu>
                   </Box> :
                   <Box sx={{ flexGrow: 0 }}>
-                    <Button startIcon={<LoginIcon />} href='/log-in' variant='outlined' sx={{color: 'white', borderColor: '#F9C8DF'}}>Log In</Button>
+                    <Button startIcon={<LoginIcon />} href='/log-in' variant='outlined' sx={{color: 'white', borderColor: '#F9C8DF', width: {xs: '90px'}, fontSize: {xs: '9px'}}}>Log In</Button>
                   </Box>}
         </Toolbar>
       </Container>
