@@ -1,0 +1,16 @@
+.home-page {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+.home-img {
+  width: 100%;
+  background-image: url('../../assets/flower-nails.png');
+  background-size: cover;
+  background-position: center;
+}
