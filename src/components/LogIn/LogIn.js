@@ -39,7 +39,7 @@ const LogIn = ({ updateUser }) => {
 
   const registerUser = async () => {
     isLoading(true)
-    const newAccount = await apiCalls.register({firstName, lastName, email, password})
+    const newAccount = await apiCalls.register({firstName, lastName, email, password, phone})
     isLoading(false)
     if(newAccount) {
       logIn()
