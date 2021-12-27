@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Alert from '@mui/material/Alert'
+import CircularProgress from '@mui/material/CircularProgress'
 import apiCalls from '../../apiCalls'
 import './LogIn.css'
 
@@ -17,15 +18,13 @@ const LogIn = ({ updateUser }) => {
   const [register, toggleForm] = React.useState(false)
   const [error, updateError] = React.useState(false)
   const [errorMessage, updateErrorMessage] = React.useState('')
+  const [loading, isLoading] = React.useState(false)
 
   const logIn = async () => {
-    if(register) {
-      toggleForm(false)
-      handleError(false, '')
-      return
-    }
+    isLoading(true)
     const user = await apiCalls.logIn({ email, password })
-    user[0] ? saveUserInfo(user[0]) : handleError(true, `We couldn't find an account with those credentials`)
+    isLoading(false)
+    user.id ? saveUserInfo(user) : handleError(true, `We couldn't find an account with those credentials`)
   }
 
   const saveUserInfo = user => {
@@ -39,36 +38,58 @@ const LogIn = ({ updateUser }) => {
   }
 
   const registerUser = async () => {
-    if(!register) {
-      toggleForm(true)
-      handleError(false, '')
-      return
+    isLoading(true)
+    const newAccount = await apiCalls.register({firstName, lastName, email, password})
+    isLoading(false)
+    if(newAccount) {
+      logIn()
+    } else {
+      handleError(true, `Couldn't create an account with those credentials. Please check your inputs or use a different email`)
     }
-    const newUser = await apiCalls.register({firstName, lastName, email, password})
-    newUser[0] ? saveUserInfo(newUser[0]) : handleError(true, 'That email already exists')
+  }
+
+  const submit = e => {
+    e && e.preventDefault()
+    if(register) {
+      registerUser()
+    } else {
+      logIn()
+    }
+  }
+
+  const keyDown = e => {
+    if(e.keyCode === 13) {
+      submit()
+    }
+  }
+
+  const switchForm = () => {
+    toggleForm(!register)
+    updateError('')
   }
 
   return (
     <Paper
       sx={{
         mt: '40px',
-        width: {xs: '350px', sm: '450px', md: '600px'},
-        height: {xs: '350px', sm: '450px', md: '600px'} }}>
-      <form className='log-in-form'>
+        minWidth: {xs: '350px', sm: '450px', md: '600px'},
+        minHeight: {xs: '350px', sm: '450px', md: '600px'} }}>
+      <form className='log-in-form' onSubmit={submit}>
         <Typography variant='h3' my={3}>Log In</Typography>
         {register &&
           <>
-        <TextField id='first-name' error={error} label='First Name' variant='outlined' onChange={e => changeFirstName(e.target.value)} sx={{width: '50%', my: 2}} />
-        <TextField id='last-name' error={error} label='Last Name' variant='outlined' onChange={e => changeLastName(e.target.value)} sx={{width: '50%', my: 2}} />
-        <TextField id='phone' error={error} label='Phone Number' type='phone' variant='outlined' onChange={e => changePhone(e.target.value)} sx={{width: '50%', my: 2}} />
+        <TextField required id='first-name' error={error} label='First Name' variant='outlined' onChange={e => changeFirstName(e.target.value)} onKeyDown={keyDown} sx={{width: '50%', my: 2}} />
+        <TextField required id='last-name' error={error} label='Last Name' variant='outlined' onChange={e => changeLastName(e.target.value)} onKeyDown={keyDown} sx={{width: '50%', my: 2}} />
+        <TextField required id='phone' error={error} label='Phone Number' type='phone' variant='outlined' onChange={e => changePhone(e.target.value)} onKeyDown={keyDown} sx={{width: '50%', my: 2}} />
           </>
         }
-          <TextField  id='email' error={error} label='Email' type='email' variant='outlined' onChange={e => changeEmail(e.target.value)} sx={{width: '50%', my: 2}} />
-          <TextField  id='password' error={error} label='Password' type='password' variant='outlined' onChange={e => changePassword(e.target.value)} sx={{width: '50%', my: 2}} />
+          <TextField required id='email' error={error} label='Email' type='email' variant='outlined' onChange={e => changeEmail(e.target.value)} onKeyDown={keyDown} sx={{width: '50%', my: 2}} />
+          <TextField required id='password' error={error} label='Password' type='password' variant='outlined' onChange={e => changePassword(e.target.value)} onKeyDown={keyDown} sx={{width: '50%', my: 2}} />
+          {loading && <CircularProgress />}
         <div>
           {error && <Alert severity='error'>{errorMessage}</Alert>}
-          <Button onClick={logIn} variant='outlined' sx={{ mx: 1, my: 2}}>Log In</Button>
-          <Button onClick={registerUser} variant='outlined' sx={{ mx: 1, my: 2}}>Register</Button>
+          <Button onClick={submit} disabled={loading} variant='outlined' sx={{ mx: 1, my: 2}}>{register ? 'Register' : 'Log in'}</Button>
+          <Button onClick={switchForm} disabled={loading} variant='outlined' sx={{ mx: 1, my: 2}}>{register ? 'Already have an account?' : 'Create an account'}</Button>
         </div>
       </form>
     </Paper>
