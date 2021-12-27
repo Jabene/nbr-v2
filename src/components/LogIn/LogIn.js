@@ -49,9 +49,13 @@ const LogIn = ({ updateUser }) => {
   }
 
   return (
-    <Paper sx={{mt: '20px', }}>
+    <Paper
+      sx={{
+        mt: '40px',
+        width: {xs: '350px', sm: '450px', md: '600px'},
+        height: {xs: '350px', sm: '450px', md: '600px'} }}>
       <form className='log-in-form'>
-        <Typography variant='h3' my={2}>Log In</Typography>
+        <Typography variant='h3' my={3}>Log In</Typography>
         {register &&
           <>
         <TextField id='first-name' error={error} label='First Name' variant='outlined' onChange={e => changeFirstName(e.target.value)} sx={{width: '50%', my: 2}} />
