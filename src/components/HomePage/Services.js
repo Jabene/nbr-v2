@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <Grid container wrap mt={4} columns={{xs: 3, s: 4, md: 8}} sx={{justifyContent: 'center'}}>
       <Grid item xs={12}>
-        <Typography align='left' variant='h3's sx={{borderBottom: 'solid black 2px'}}>Services</Typography>
+        <Typography align='left' variant='h3's sx={{borderBottom: 'solid #F9C8DF 2px'}} color='white'>Services</Typography>
       </Grid>
 
       <Grid item xs={2} m={2}>
