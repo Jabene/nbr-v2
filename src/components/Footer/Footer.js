@@ -8,7 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 
 const Footer = () => {
   return (
-    <Grid container sx={{minHeight: '150px', width: '100vw', backgroundColor: 'black'}}>
+    <Grid container sx={{minHeight: '150px', width: '100vw', backgroundColor: '#E06C9F'}}>
       <Grid item xs={6}>
         <Typography variant='h6' color='white'>Socials</Typography>
         <IconButton sx={{backgroundColor: 'white', m: 1}}>
