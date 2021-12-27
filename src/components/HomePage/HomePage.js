@@ -1,72 +1,110 @@
 import Grid from '@mui/material/Grid'
+import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import CardMedia from '@mui/material/CardMedia'
+import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
+import DateRangeIcon from '@mui/icons-material/DateRange'
 import flowerNails from '../../assets/flower-nails.png'
 import './HomePage.css'
 
 
 const HomePage = () => {
   return (
-        <Grid container
-          sx={{
-            borderRadius: '6px',
-            overflow: 'scroll',
-            justifyContent: 'center'}}
-          columns={{xs: 5, md: 12}}>
-          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: {xs: '400px'}, maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
-            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
-              <CardMedia
-                component= 'img'
-                image= 'https://wallpapercave.com/wp/wp4208201.jpg'
-                height='60%'
-                alt='pink nails in pink liquid'/>
-              <CardContent>
-                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>Make An Appointment</Typography></Button>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: {xs: '400px'}, maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
-            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
-              <CardMedia
-                component= 'img'
-                image= 'https://www.newnailtime.com/img/aboutimg1.jpg'
-                height='60%'
-                alt='pink nails in pink liquid'/>
-              <CardContent>
-                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>View Gallery</Typography></Button>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: '400px', maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
-            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
-              <CardMedia
-                component= 'img'
-                image= 'https://ak.picdn.net/shutterstock/videos/6669608/thumb/1.jpg'
-                height='60%'
-                alt='pink nails in pink liquid'/>
-              <CardContent>
-                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>Write a review</Typography></Button>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={3} md={5} m={3} sx={{minWidth: {xs: '300px', md: '400px'}, mx: {xs: 0, md: 2}, minHeight: '400px', maxHeight: '40vh', display: 'flex', justifyContent: 'center'}}>
-            <Card sx={{backgroundColor: '#E06C9F', maxWidth: {xs: '100%'}, maxHeight: {xs: '100%'}}}>
-              <CardMedia
-                component= 'img'
-                image= 'https://media.istockphoto.com/photos/hands-with-pastel-nail-polish-on-multicolored-background-picture-id1308463577?b=1&k=20&m=1308463577&s=170667a&w=0&h=8lCVx4f1MjAnKeDzSrOUj3jksUU0iWfU8QjNbXAnGIw='
-                height='60%'
-                alt='pink nails in pink liquid'/>
-              <CardContent>
-                <Button variant='outlined' sx={{borderColor: '#F9C8DF'}}><Typography variant='h6' sx={{color: 'white'}}>View Pricing</Typography></Button>
-              </CardContent>
-            </Card>
-          </Grid>
+    <Container className='home-page' maxWidth='xxl' sx={{display: 'flex'}}>
+      <Typography variant='h2' my={2}>Nails By Rylee</Typography>
+      <Paper elevation={3} sx={{width: {xs: '500px', sm:'650px', md: '925px'}, maxWidth: {xs: '100vw'}, height: {xs:'300px', sm:'400px', md:'600px'}, minHeight: {xs:'200px'}, maxHeight: {xs:'700px'}}} className='home-img'></Paper>
+      <Grid container wrap mt={4} columns={{xs: 3, s: 6, md: 8}} sx={{justifyContent: 'center'}}>
+        <Grid item xs={12}>
+          <Typography align='left' variant='h3's sx={{borderBottom: 'solid black 2px'}}>Services</Typography>
         </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={2} m={2}>
+          <Card sx={{maxWidth: '500px', minWidth: {xs: '300px'}}}>
+            <CardHeader avatar={<DateRangeIcon />} title='Service 1' titleTypographyProps={{fontSize: '25px'}} sx={{backgroundColor: '#E06C9F'}} />
+            <CardContent sx={{backgroundColor: '#F9C8DF'}}>
+              <Typography variant='body2'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+      </Grid>
+    </Container>
   )
 }
 
