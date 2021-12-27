@@ -7,6 +7,7 @@ import LogIn from '../LogIn/LogIn'
 import DrawerLeft from '../Drawer/DrawerLeft'
 import DrawerRight from '../Drawer/DrawerRight'
 import Container from '@mui/material/Container'
+import Footer from '../Footer/Footer'
 
 
 
@@ -34,9 +35,10 @@ function App() {
                 <Navigate to='/' /> :
                 <LogIn updateUser={setUser}/>}/>
           </Routes>
+          <Footer />
+          <DrawerLeft drawerLeft={drawerLeft} toggleDrawerLeft={toggleDrawerLeft} />
+          <DrawerRight drawerRight={drawerRight} toggleDrawerRight={toggleDrawerRight} />
         </div>
-        <DrawerLeft drawerLeft={drawerLeft} toggleDrawerLeft={toggleDrawerLeft} />
-        <DrawerRight drawerRight={drawerRight} toggleDrawerRight={toggleDrawerRight} />
       </Container>
   );
 }
