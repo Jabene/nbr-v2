@@ -12,7 +12,7 @@ See the [deployed app](http://nailsbyrylee.com/)!
 ## <ins>Overview</ins>
 
 # Nails By Rylee
-This app is designed to allow users to create and modify appointments, and leave reviews. Managers will be able to log in and manipulate appointments, as well as update the image gallery. My main focus with this project is 
+This app is designed to allow users to create and modify appointments, and leave reviews. Managers will be able to log in and manipulate appointments, as well as update the image gallery. My main focus with this project is responsiveness, as well as integrating Material UI. 
 
 
 ### <ins>Setup</ins>
