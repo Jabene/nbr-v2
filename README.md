@@ -1,5 +1,5 @@
 # Nails By Rylee 
-See the [deployed app](https://nailsbyrylee.com/)!
+See the [deployed app](http://nailsbyrylee.com/)!
 
 ## Table of contents
 - [Overview](#overview)
