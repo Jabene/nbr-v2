@@ -7,9 +7,7 @@ See the [deployed app](https://nailsbyrylee.com/)!
 - [Screenshots](#screenshots)
 - [Project Board](#project-board)
 - [API](#api)
-- [Endpoints](#endpoints)
 - [Technologies](#technologies)
-- [Contributors](#contributors)
 
 ## <ins>Overview</ins>
 
